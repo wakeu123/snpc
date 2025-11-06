@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: SNPC
+  datasource:
+    url: jdbc:postgresql://localhost:5432/snpc_db
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  servlet:
+    context-path: /api
+  port: ${SERVER_PORT:9999}

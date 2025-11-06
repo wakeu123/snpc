@@ -3,10 +3,10 @@ package com.gaia.snpc.domains.entities;
 import lombok.*;
 import jakarta.persistence.*;
 
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 @Getter @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "GEO_COMMUNE")
 @Entity(name = "GeoCommunes")
@@ -30,22 +30,30 @@ public class GeoCommunes extends BaseEntity {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "commune", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SupplyAgroDealers> agroDealers;
+    private List<SupplyAgroDealers> agroDealers;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "commune", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<TechCtaAdvisors> ctas;
+    private List<TechCtaAdvisors> ctas;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "commune", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<FinanceEmfInstitutions> emfs;
+    private List<FinanceEmfInstitutions> emfs;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "commune", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Producers> producers;
+    private List<Producers> producers;
+
+    public GeoCommunes() {
+        super();
+        setEmfs(new ArrayList<>());
+        setCtas(new ArrayList<>());
+        setProducers(new ArrayList<>());
+        setAgroDealers(new ArrayList<>());
+    }
 
     public GeoCommunes(String id, String code) {
         super(id);

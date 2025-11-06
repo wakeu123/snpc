@@ -3,12 +3,12 @@ package com.gaia.snpc.services.impls;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.gaia.snpc.exceptions.ResourceNotFoundException;
 import com.gaia.snpc.domains.entities.GeoCommunes;
 import com.gaia.snpc.services.mappers.CommuneMapper;
 import com.gaia.snpc.repositories.CommuneRepository;
 import com.gaia.snpc.domains.entities.GeoDepartments;
 import com.gaia.snpc.services.interfaces.CommuneService;
+import com.gaia.snpc.exceptions.ResourceNotFoundException;
 import com.gaia.snpc.services.interfaces.DepartmentService;
 import com.gaia.snpc.domains.dtos.request.CommuneRequestDTO;
 import com.gaia.snpc.domains.dtos.responses.CommuneResponseDTO;
@@ -46,12 +46,11 @@ public class CommuneServiceImpl implements CommuneService {
 
     @Override
     public CommuneResponseDTO create(CommuneRequestDTO dto) {
+        GeoDepartments department = departmentService.findById(dto.departmentID());
         GeoCommunes elem = new GeoCommunes();
         elem.setName(dto.name());
         elem.setCodeCommune(dto.code());
-        String departmentID = departmentService.getById(dto.departmentID()).id();
-        GeoDepartments depart = new GeoDepartments(departmentID);
-        elem.setDepartment(depart);
+        elem.setDepartment(department);
         return mapper.apply(repository.save(elem));
     }
 

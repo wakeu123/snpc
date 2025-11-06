@@ -62,8 +62,9 @@ public class DepartmentServiceImpl implements DepartmentService {
         return mapper.apply(repository.save(department));
     }
 
+    @Override
     public GeoDepartments findById(String id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Aucune departement n'existe avec cet id"));
+                .orElseThrow(() -> new ResourceNotFoundException("Aucun departement n'existe avec cet id"));
     }
 }

@@ -1,9 +1,9 @@
 package com.gaia.snpc.domains.entities;
 
-import jakarta.persistence.*;
 import lombok.*;
+import jakarta.persistence.*;
 
-import java.util.Set;
+import java.util.List;
 
 @Getter @Setter
 @NoArgsConstructor
@@ -48,5 +48,5 @@ public class SupplyAgroDealers extends BaseEntity {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "agroDealer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<SupplyAgrodealerProducts> agrodealerProducts;
+    private List<SupplyAgrodealerProducts> agrodealerProducts;
 }

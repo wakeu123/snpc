@@ -2,7 +2,7 @@ package com.gaia.snpc.services.impls;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.gaia.snpc.ResourceNotFoundException;
+import com.gaia.snpc.exceptions.ResourceNotFoundException;
 import com.gaia.snpc.domains.entities.GeoRegions;
 import com.gaia.snpc.services.mappers.RegionMapper;
 import com.gaia.snpc.repositories.RegionRepository;

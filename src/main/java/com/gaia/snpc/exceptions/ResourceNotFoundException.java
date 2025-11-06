@@ -1,4 +1,4 @@
-package com.gaia.snpc;
+package com.gaia.snpc.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
 

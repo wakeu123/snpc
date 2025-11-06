@@ -1,10 +1,9 @@
 package com.gaia.snpc.services.impls;
 
-import com.gaia.snpc.domains.entities.GeoCommunes;
 import com.gaia.snpc.domains.entities.GeoRegions;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.gaia.snpc.ResourceNotFoundException;
+import com.gaia.snpc.exceptions.ResourceNotFoundException;
 import com.gaia.snpc.domains.entities.GeoDepartments;
 import com.gaia.snpc.repositories.DepartmentRepository;
 import com.gaia.snpc.services.interfaces.RegionService;

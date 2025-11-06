@@ -3,7 +3,7 @@ package com.gaia.snpc.services.impls;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.gaia.snpc.ResourceNotFoundException;
+import com.gaia.snpc.exceptions.ResourceNotFoundException;
 import com.gaia.snpc.domains.entities.GeoCommunes;
 import com.gaia.snpc.services.mappers.CommuneMapper;
 import com.gaia.snpc.repositories.CommuneRepository;

@@ -9,7 +9,6 @@ services:
       - spring.datasource.password=${DB_PASSWORD}
     networks:
       - snpc-network
-
 networks:
   snpc-network:
     external: true

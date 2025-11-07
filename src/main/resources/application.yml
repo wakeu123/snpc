@@ -2,7 +2,7 @@ spring:
   application:
     name: snpc
   datasource:
-    url: jdbc:postgresql://localhost:5432/snpc_db
+    url: jdbc:postgresql://snpc-database:5433/snpc_db
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver

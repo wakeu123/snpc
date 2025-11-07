@@ -1,6 +1,6 @@
 services:
   snpc:
-    image: wakeu/snpc:1.0.0
+    image: wakeu/snpc:0.0.1
     container_name: snpc
     restart: always
     environment:

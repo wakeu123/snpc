@@ -14,4 +14,12 @@ spring:
 server:
   servlet:
     context-path: /api
+  forward-headers-strategy: framework
   port: ${SERVER_PORT:9999}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /v3/api-docs

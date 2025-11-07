@@ -1,6 +1,6 @@
 spring:
   application:
-    name: SNPC
+    name: snpc
   datasource:
     url: jdbc:postgresql://localhost:5432/snpc_db
     username: postgres

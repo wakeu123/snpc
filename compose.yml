@@ -1,0 +1,16 @@
+services:
+  snpc:
+    image: wakeu/snpc:1.0.0
+    container_name: snpc
+    restart: always
+    environment:
+      - spring.datasource.url=${DB_URL}
+      - spring.datasource.username=${DB_USERNAME}
+      - spring.datasource.password=${DB_PASSWORD}
+    networks:
+      - snpc-network
+
+networks:
+  snpc-network:
+    external: true
+    name: snpc-network
